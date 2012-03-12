@@ -14,13 +14,13 @@ void turn(int playerNumber)
 	}
 	while (true)
 	{
-        cout << "(1-5) Visit a city." << endl;
-        cout << "(6) End Turn." << endl;
+        cout << "(1-3) Visit a city." << endl;
+        cout << "(4) End Turn." << endl;
         cout << "What do you want to do: ";
         cin >> cityToWorkOn;
         cityToWorkOn -= 1;
         cout << endl;
-        if (cityToWorkOn == 5)
+        if (cityToWorkOn == 3)
         {
             return;
         }

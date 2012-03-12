@@ -11,7 +11,7 @@ class player
 {
     string name;
     public:
-        city cities[4];
+        city cities[22];
         /*void setName(string);
         string getName();
         player();*/

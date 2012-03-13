@@ -132,6 +132,5 @@ void visitCity(int cityToWorkOn, int playerNumber)
 				cout << "You entered a number that was not available, please try again." << endl;
 				break;
 		}
-		break;
 	}
 }

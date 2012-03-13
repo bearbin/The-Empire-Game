@@ -1,0 +1,9 @@
+Short term:
+
+Implement events every turn. (Soldiers costing money?)
+
+
+Long term:
+
+Saving and loading games. 
+Implement attacking

@@ -203,25 +203,32 @@ int city::soldierInfo(int action, int soldierType)
 
 int city::setSoldier(int action, int value, int soldierType)
 {
-    // action = 0 adds value to the soldier count. Returns -1 if soldiers cannot be added because the soldierCap has been reached, else returns soldierCount.
-    // action = 1 subtracts value from the soldier count. Returns 0 even if value > soldier count. Returns soldierCount.
-    // action = 2 Sets the soldier count to value. Returns -1 if value is negative. Returns soldierCount.
-    // action = 3 Tells the amount of soldier[soldierType].
-    switch (action)
-    {
-        case 0:
-            if(soldierTotal() + value <= soldierCap() && soldierInfo(0,soldierType) * value <= money)
-            {
-                soldier[soldierType] += value;
-                money -= soldierInfo(0,soldierType) * value;
-                return soldier[soldierType];
-            }
-            else
-            {
-                return -1;
-            }
-            break;
-        case 1:
+	// action = 0 adds value to the soldier count. Returns -1 if soldiers cannot be added because the soldierCap has been reached, else returns soldierCount.
+	// action = 1 subtracts value from the soldier count. Returns 0 even if value > soldier count. Returns soldierCount.
+	// action = 2 Sets the soldier count to value. Returns -1 if value is negative. Returns soldierCount.
+	// action = 3 Tells the amount of soldier[soldierType].
+	switch (action)
+	{
+		case 0:
+        		if(soldierTotal() + value <= soldierCap())
+			{
+				if (soldierInfo(0,soldierType) * value <= money)
+				{
+					soldier[soldierType] += value;
+					money -= soldierInfo(0,soldierType) * value;
+					return soldier[soldierType];
+				}
+				else
+				{
+					return -1;
+				}
+			}
+			else
+			{
+				return -2;
+			}
+			break;
+		case 1:
             if (value <= soldier[soldierType])
             {
                 soldier[soldierType] -= value;
@@ -259,9 +266,15 @@ int city::setBuilding(int action, int value, int buildingNum)
     switch (action)
     {
         case 0:
-		if(building[buildingNum] + value <= buildingInfo(1,buildingNum) && buildingInfo(0,buildingNum) <= money)
+		if(building[buildingNum] + value <= buildingInfo(1,buildingNum))
 		{
-			building[buildingNum] += value;
+			if (buildingInfo(0, buildingNum) <= money)
+			{
+				building[buildingNum] += value;
+				money -= buildingInfo(0, buildingNum);
+				return building[buildingNum];
+			}
+			
 			money -= buildingInfo(0,buildingNum) * value;
 			return building[buildingNum];
 		}

@@ -72,7 +72,7 @@ void visitCity(int cityToWorkOn, int playerNumber)
 				}
 				break;
 			case 2:
-                cout << "(0) Pikeman" << endl;
+				cout << "(0) Pikeman" << endl;
 				cout << "(1) Swordsman" << endl;
 				cout << "(2) Medic" << endl;
 				cout << "(3) Archer" << endl;
@@ -87,7 +87,11 @@ void visitCity(int cityToWorkOn, int playerNumber)
 				result = realPlayer[playerNumber].cities[cityToWorkOn].setSoldier(0, amountToBeUpgradedBy, thingToBeUpgraded);
 				if (result == -1)
 				{
-					cout << "Upgrade failed for some reason. Could be no money or food." << endl;
+					cout << "Upgrade failed. There was not enough food for the soldiers." << endl;
+				}
+				else if (result == -2)
+				{
+					cout << "Upgrade failed. There was nout enough money to hire the new soldiers." << endl;
 				}
 				else
 				{

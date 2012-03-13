@@ -274,13 +274,14 @@ int city::setBuilding(int action, int value, int buildingNum)
 				money -= buildingInfo(0, buildingNum);
 				return building[buildingNum];
 			}
-			
-			money -= buildingInfo(0,buildingNum) * value;
-			return building[buildingNum];
+			else 
+			{
+				return -1;
+			}
 		}
 		else
 		{
-			return -1;
+			return -2;
 		}
 		break;
 	case 1:

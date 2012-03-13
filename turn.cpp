@@ -63,7 +63,11 @@ void visitCity(int cityToWorkOn, int playerNumber)
 				result = realPlayer[playerNumber].cities[cityToWorkOn].setBuilding(0, amountToBeUpgradedBy, thingToBeUpgraded);
 				if (result == -1)
 				{
-					cout << "Upgrade failed for some reason. Could be no money or building level maxed out." << endl;
+					cout << "Upgrade failed. Not enough money to upgrade the building." << endl;
+				}
+				else if (result == -2)
+				{
+					cout << "Upgrade failed. Building level maxed out." << endl;
 				}
 				else
 				{

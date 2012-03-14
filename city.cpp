@@ -21,6 +21,73 @@ city::city()
 	building[7] = 0;
 }
 
+string city::getObjectName(int objectType, int objectNumber)
+{
+	switch (objectType)
+	{
+	case 0:
+		switch (objectNumber)
+		{
+		case 0:
+			return "Pikeman";
+			break;
+		case 1:
+			return "Swordsman";
+			break;
+		case 2:
+			return "Medic";
+			break;
+		case 3:
+			return "Archer";
+			break;
+		case 4:
+			return "Horseman";
+			break;
+		case 5:
+			return "SuperSoldier";
+		default:
+			return "Error. SoldierType could not be retreived.";
+			break;
+		}
+		break;
+	case 1:
+		switch (objectNumber)
+		{
+		case 0:
+			return "Castle";
+			break;
+		case 1:
+			return "Training Camp";
+			break;
+		case 2:
+			return "Farms";
+			break;
+		case 3:
+			return "Blacksmith 1";
+			break;
+		case 4:
+			return "Blacksmith 2";
+			break;
+		case 5:
+			return "Blacksmith 3";
+			break;
+		case 6:
+			return "Blacksmith 4";
+			break;
+		case 7:
+			return "Blacksmith 5";
+			break;
+		default:
+			return "Error. BuildingType could not be retreived.";
+			break;
+		}
+		break;
+	default:
+		break;
+	}	
+	return "<ERROR ALERT. PLEASE SUBMIT BUG REPORT>";
+}
+
 long long city::getMoney()
 {
     return money;
@@ -139,10 +206,10 @@ int city::buildingInfo(int action, int buildingNum)
 
 int city::soldierInfo(int action, int soldierType)
 {
-    switch (action)
-    {
-        case 0:
-            switch (soldierType)
+	switch (action)
+	{
+		case 0:
+			switch (soldierType)
             {
                 case 0:
                     return 50000;
@@ -207,16 +274,28 @@ int city::setSoldier(int action, int value, int soldierType)
 	// action = 1 subtracts value from the soldier count. Returns 0 even if value > soldier count. Returns soldierCount.
 	// action = 2 Sets the soldier count to value. Returns -1 if value is negative. Returns soldierCount.
 	// action = 3 Tells the amount of soldier[soldierType].
+	bool correctChoice = false;
 	switch (action)
 	{
 		case 0:
+			while (correctChoice == false)
+			{
         		if(soldierTotal() + value <= soldierCap())
 			{
 				if (soldierInfo(0,soldierType) * value <= money)
 				{
+					cout << "If you do this:" << endl;
+					cout << "You will be charged $" << soldierInfo(0,soldierType) * value << " ." << endl;
+					cout << "You will have " << soldier[soldierType] + value << " soldiers of type " << getObjectName(0, soldierType) << endl;
+					cout << "Do you wish to do this (true/false): ";
+					cin >> correctChoice;
+					cout << endl;
+					if (correctChoice == true)
+					{
 					soldier[soldierType] += value;
 					money -= soldierInfo(0,soldierType) * value;
 					return soldier[soldierType];
+					}
 				}
 				else
 				{
@@ -226,6 +305,7 @@ int city::setSoldier(int action, int value, int soldierType)
 			else
 			{
 				return -2;
+			}
 			}
 			break;
 		case 1:
@@ -255,6 +335,7 @@ int city::setSoldier(int action, int value, int soldierType)
             return -1;
             break;
     }
+	return -1;
 }
 
 int city::setBuilding(int action, int value, int buildingNum)
@@ -263,16 +344,27 @@ int city::setBuilding(int action, int value, int buildingNum)
     // action = 1 subtracts value from the soldier count. Returns -1 if building level is tried to go under 0. Else returns building level.
     // action = 2 Sets the soldier count to value. Returns -1 if value is negative. Returns soldierCount.
     // action = 3 Tells the amount of soldier[soldierType].
+	bool correctChoice = false;
     switch (action)
     {
         case 0:
+		while (correctChoice == false)
+		{
 		if(building[buildingNum] + value <= buildingInfo(1,buildingNum))
 		{
 			if (buildingInfo(0, buildingNum) <= money)
 			{
+				cout << "If you do this:" << endl;
+                                cout << "You will be charged $" << buildingInfo(1, buildingNum) * value << " ." << endl;
+                                cout << "You will have " << building[buildingNum] + value << " levels in your " << getObjectName(1, buildingNum) << endl;
+                                cout << "Do you wish to do this (true/false): ";
+                                cin >> correctChoice;
+				if (correctChoice == true)
+				{
 				building[buildingNum] += value;
 				money -= buildingInfo(0, buildingNum);
 				return building[buildingNum];
+				}
 			}
 			else 
 			{
@@ -282,6 +374,7 @@ int city::setBuilding(int action, int value, int buildingNum)
 		else
 		{
 			return -2;
+		}
 		}
 		break;
 	case 1:
@@ -310,6 +403,7 @@ int city::setBuilding(int action, int value, int buildingNum)
 		return -1;
 		break;
     }
+	return -1;
 }
 
 void city::getBlacksmithBonus()

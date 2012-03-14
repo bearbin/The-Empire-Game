@@ -1,7 +1,7 @@
 Short term:
 
 Implement events every turn. (Soldiers costing money?)
-Implement choices on whether to do thing or not.
+Reduce number of blacksmiths to 3.
 
 Long term:
 

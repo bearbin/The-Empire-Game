@@ -11,7 +11,7 @@ class player
 {
 	string name;
 	public:
-        city cities[22];
+        city cities[2];
 }realPlayer[9];
 
 #endif // PLAYER_H_INCLUDED

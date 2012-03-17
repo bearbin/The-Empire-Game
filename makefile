@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES= main.cpp city.cpp game.cpp getPlayerNumbers.cpp turn.cpp city.hpp player.hpp functions.hpp
+SOURCES= main.cpp city.cpp game.cpp getPlayerNumbers.cpp turn.cpp ConfigFile.cpp Chameleon.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=The-Empire-Game
 

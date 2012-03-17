@@ -1,9 +1,6 @@
-#include <iostream>
-
 using namespace std;
 
 #include "functions.hpp"
-#include "player.hpp"
 
 void turn(int playerNumber)
 {

@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES= main.cpp city.cpp player.cpp game.cpp getPlayerNumbers.cpp turn.cpp city.h player.h functions.h
+SOURCES= main.cpp city.cpp player.cpp game.cpp getPlayerNumbers.cpp turn.cpp city.hpp player.hpp functions.hpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=The-Empire-Game
 

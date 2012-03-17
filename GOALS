@@ -1,5 +1,6 @@
 Short term:
 
+Clean up code. (Add proper tabs and remove badly formatted code.)
 Implement events every turn. (Soldiers costing money?)
 Add error checking to all functions.
 

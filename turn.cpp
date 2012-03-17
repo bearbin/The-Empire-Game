@@ -53,7 +53,7 @@ void visitCity(int cityToWorkOn, int playerNumber)
 			cout << "(0) Castle" << endl;
 			cout << "(1) Training Camp" << endl;
 			cout << "(2) Farms" << endl;
-			cout << "(3-7) Blacksmiths" << endl;
+			cout << "(3-5) Blacksmiths" << endl;
 			cout << "What building do you want to upgrade: ";
 			cin >> thingToBeUpgraded;
 			cout << endl;
@@ -113,7 +113,7 @@ void visitCity(int cityToWorkOn, int playerNumber)
 			cout << "(0) Castle" << endl;
 			cout << "(1) Training Camp" << endl;
 			cout << "(2) Farms" << endl;
-			cout << "(3-7) Blacksmith (1-5)" << endl;
+			cout << "(3-5) Blacksmith (1-3)" << endl;
 			cout << "What building do you want to inspect: ";
 			cin >> thingToBeUpgraded;
 			cout << endl;

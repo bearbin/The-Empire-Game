@@ -17,8 +17,6 @@ city::city()
 	building[3] = 1;
 	building[4] = 0;
 	building[5] = 0;
-	building[6] = 0;
-	building[7] = 0;
 }
 
 string city::getObjectName(int objectType, int objectNumber)
@@ -71,12 +69,6 @@ string city::getObjectName(int objectType, int objectNumber)
 		case 5:
 			return "Blacksmith 3";
 			break;
-		case 6:
-			return "Blacksmith 4";
-			break;
-		case 7:
-			return "Blacksmith 5";
-			break;
 		default:
 			return "Error. BuildingType could not be retreived.";
 			break;
@@ -105,7 +97,7 @@ int city::soldierCap()
 
 int city::blacksmithTotal()
 {
-	return building[3] + building[4] + building[5] + building[6] + building[7];
+	return building[3] + building[4] + building[5];
 }
 
 int city::buildingInfo(int action, int buildingNum)
@@ -142,14 +134,6 @@ int city::buildingInfo(int action, int buildingNum)
 					// 1 Blacksmith level costs £350,000
 					return 350000;
 					break;
-				case 6:
-					// 1 Blacksmith level costs £350,000
-					return 350000;
-					break;
-				case 7:
-					// 1 Blacksmith level costs £350,000
-					return 350000;
-					break;
 				default:
 					return -1;
 					break;
@@ -179,14 +163,6 @@ int city::buildingInfo(int action, int buildingNum)
 				return 100;
 				break;
 			case 5:
-				// Each blacksmith can have 100 levels.
-				return 100;
-				break;
-			case 6:
-				// Each blacksmith can have 100 levels.
-				return 100;
-				break;
-			case 7:
 				// Each blacksmith can have 100 levels.
 				return 100;
 				break;
@@ -280,6 +256,8 @@ int city::setSoldier(int action, int value, int soldierType)
 		case 0:
 			while (correctChoice == false)
 			{
+			if (soldierType >= 0 && soldierType <= 5)
+			{
         		if(soldierTotal() + value <= soldierCap())
 			{
 				if (soldierInfo(0,soldierType) * value <= money)
@@ -305,6 +283,11 @@ int city::setSoldier(int action, int value, int soldierType)
 			else
 			{
 				return -2;
+			}
+			}
+			else 
+			{
+				cout << "<ERROR!> <There is no soldier of the type selected!>" << endl;
 			}
 			}
 			break;
@@ -348,6 +331,8 @@ int city::setBuilding(int action, int value, int buildingNum)
     switch (action)
     {
         case 0:
+		if (buildingNum >= 0 && buildingNum <= 5)
+		{
 		while (correctChoice == false)
 		{
 		if(building[buildingNum] + value <= buildingInfo(1,buildingNum))
@@ -375,6 +360,11 @@ int city::setBuilding(int action, int value, int buildingNum)
 		{
 			return -2;
 		}
+		}
+		}
+		else
+		{
+			cout << "<ERROR!> <Wrong BuildingNumber Was entered.>" << endl;
 		}
 		break;
 	case 1:

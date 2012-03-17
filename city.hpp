@@ -9,7 +9,7 @@ using namespace std;
 class city
 {
 	long long money;
-	int soldier[5], building[7];
+	int soldier[5], building[5];
 	// soldier[0] = Pikeman
 	// soldier[1] = Swordman
 	// soldier[2] = Medic
@@ -22,8 +22,6 @@ class city
 	// building[3] = blacksmith
 	// building[4] = blaqcksmith
 	// building[5] = blacksmith
-	// building[6] = blacksmith
-	// building[7] = blacksmith
 	public:
 		city();
 		string getObjectName(int, int);

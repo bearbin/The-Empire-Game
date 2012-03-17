@@ -14,7 +14,7 @@ void game()
 	{
         for (i = 0; i <= players; i++)
         {
-            cout << "Turn " << a+1 << " of " << amountOfTurns << " for player " << i+1 << " ." << endl << endl;
+            cout << "Turn " << a+1 << " of " << amountOfTurns << " for player " << i+1 << "." << endl << endl;
             turn(i);
         }
 	}

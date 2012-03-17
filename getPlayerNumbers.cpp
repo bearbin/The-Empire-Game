@@ -1,6 +1,6 @@
 using namespace std;
 
-#include "functions.h"
+#include "functions.hpp"
 
 int getPlayerNumbers()
 {

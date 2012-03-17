@@ -5,7 +5,7 @@ using namespace std;
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
 
-#include "city.h"
+#include "city.hpp"
 
 class player
 {

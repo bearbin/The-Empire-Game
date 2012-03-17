@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#include "functions.h"
-#include "player.h"
+#include "functions.hpp"
+#include "player.hpp"
 
 void turn(int playerNumber)
 {

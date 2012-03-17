@@ -24,6 +24,8 @@
    René Nyffenegger rene.nyffenegger@adp-gmbh.ch
 */
 
+/* This code has been altered to work with The Empire Game. */
+
 #ifndef CHAMELEON_H__
 #define CHAMELEON_H__
 

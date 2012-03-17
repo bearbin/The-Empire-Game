@@ -24,10 +24,15 @@
    René Nyffenegger rene.nyffenegger@adp-gmbh.ch
 */
 
+/* This code has been modified slightly to allow it to be used within The Empire Game. */
+
 #include <string>
 #include <sstream>
+#include <cstdlib>
 
-#include "Chameleon.h"
+#include "Chameleon.hpp"
+
+using namespace std;
 
 Chameleon::Chameleon(std::string const& value) {
   value_=value;

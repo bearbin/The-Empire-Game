@@ -21,154 +21,154 @@ city::city()
 
 string city::getObjectName(int objectType, int objectNumber)
 {
-	switch (objectType)
+switch (objectType)
+{
+case 0:
+	switch (objectNumber)
 	{
 	case 0:
-		switch (objectNumber)
-		{
-		case 0:
-			return "Pikeman";
-			break;
-		case 1:
-			return "Swordsman";
-			break;
-		case 2:
-			return "Medic";
-			break;
-		case 3:
-			return "Archer";
-			break;
-		case 4:
-			return "Horseman";
-			break;
-		case 5:
-			return "SuperSoldier";
-		default:
-			return "Error. SoldierType could not be retreived.";
-			break;
-		}
+		return "Pikeman";
 		break;
 	case 1:
-		switch (objectNumber)
-		{
-		case 0:
-			return "Castle";
-			break;
-		case 1:
-			return "Training Camp";
-			break;
-		case 2:
-			return "Farms";
-			break;
-		case 3:
-			return "Blacksmith 1";
-			break;
-		case 4:
-			return "Blacksmith 2";
-			break;
-		case 5:
-			return "Blacksmith 3";
-			break;
-		default:
-			return "Error. BuildingType could not be retreived.";
-			break;
-		}
+		return "Swordsman";
+		break;
+	case 2:
+		return "Medic";
+		break;
+	case 3:
+		return "Archer";
+		break;
+	case 4:
+		return "Horseman";
+		break;
+	case 5:
+		return "SuperSoldier";
+	default:
+		return "Error. SoldierType could not be retreived.";
+		break;
+	}
+	break;
+case 1:
+	switch (objectNumber)
+	{
+	case 0:
+		return "Castle";
+		break;
+	case 1:
+		return "Training Camp";
+		break;
+	case 2:
+		return "Farms";
+		break;
+	case 3:
+		return "Blacksmith 1";
+		break;
+	case 4:
+		return "Blacksmith 2";
+		break;
+	case 5:
+		return "Blacksmith 3";
 		break;
 	default:
+		return "Error. BuildingType could not be retreived.";
 		break;
-	}	
-	return "<ERROR ALERT. PLEASE SUBMIT BUG REPORT>";
+	}
+	break;
+default:
+	break;
+}	
+return "<ERROR ALERT. PLEASE SUBMIT BUG REPORT>";
 }
 
 long long city::getMoney()
 {
-    return money;
+return money;
 }
 
 int city::soldierTotal()
 {
-	return soldier[0] + soldier[1] + soldier[2] + soldier[3] + soldier[4] + soldier[5];
+return soldier[0] + soldier[1] + soldier[2] + soldier[3] + soldier[4] + soldier[5];
 }
 
 int city::soldierCap()
 {
-	return building[2] * 200 - soldier[0] - soldier[1] - soldier[2] - soldier[3] - soldier[4] - soldier[5];
+return building[2] * 200 - soldier[0] - soldier[1] - soldier[2] - soldier[3] - soldier[4] - soldier[5];
 }
 
 int city::blacksmithTotal()
 {
-	return building[3] + building[4] + building[5];
+return building[3] + building[4] + building[5];
 }
 
 int city::buildingInfo(int action, int buildingNum)
 {
-	// action = 0 Gets building cost.
-	// action = 1 Gets maxlevel.
-	// action = 2 gets current level
-	switch(action)
+// action = 0 Gets building cost.
+// action = 1 Gets maxlevel.
+// action = 2 gets current level
+switch(action)
+{
+case 0:
+	switch(buildingNum)
 	{
-		case 0:
-			switch(buildingNum)
-			{
-				case 0:
-					// Castle costs £3 million.
-					return 3000000;
-					break;
-				case 1:
-					// Trainingcamp costs £150000.
-					return 150000;
-					break;
-				case 2:
-					// 1 farms level costs £200,000.
-					return 200000;
-					break;
-				case 3:
-					// 1 Blacksmith level costs £350,000
-					return 350000;
-					break;
-				case 4:
-					// 1 Blacksmith level costs £350,000
-					return 350000;
-					break;
-				case 5:
-					// 1 Blacksmith level costs £350,000
-					return 350000;
-					break;
-				default:
-					return -1;
-					break;
-			}
-			break;
-		case 1:
-			switch(buildingNum)
-			{
-			case 0:
-				// Castle can be upgraded to level 3.
-				return 3;
-				break;
-			case 1:
-				// Trainingcamp has only 1 level.
-				return 1;
-				break;
-			case 2:
-				// Farms can be upgraded to level 30.
-				return 30;
-				break;
-			case 3:
-				// Each blacksmith can have 100 levels.
-				return 100;
-				break;
-			case 4:
-				// Each blacksmith can have 100 levels.
-				return 100;
-				break;
-			case 5:
-				// Each blacksmith can have 100 levels.
-				return 100;
-				break;
-			default:
-				return -1;
-				break;
+	case 0:
+		// Castle costs £3 million.
+		return 3000000;
+		break;
+	case 1:
+		// Trainingcamp costs £150000.
+		return 150000;
+		break;
+	case 2:
+		// 1 farms level costs £200,000.
+		return 200000;
+		break;
+	case 3:
+		// 1 Blacksmith level costs £350,000
+		return 350000;
+		break;
+	case 4:
+		// 1 Blacksmith level costs £350,000
+		return 350000;
+		break;
+	case 5:
+		// 1 Blacksmith level costs £350,000
+		return 350000;
+		break;
+	default:
+		return -1;
+		break;
+	}
+	break;
+case 1:
+	switch(buildingNum)
+	{
+	case 0:
+		// Castle can be upgraded to level 3.
+		return 3;
+		break;
+	case 1:
+		// Trainingcamp has only 1 level.
+		return 1;
+		break;
+	case 2:
+		// Farms can be upgraded to level 30.
+		return 30;
+		break;
+	case 3:
+		// Each blacksmith can have 100 levels.
+		return 100;
+		break;
+	case 4:
+		// Each blacksmith can have 100 levels.
+		return 100;
+		break;
+	case 5:
+		// Each blacksmith can have 100 levels.
+		return 100;
+		break;
+	default:
+		return -1;
+		break;
 			}
 			break;
 		case 2:

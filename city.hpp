@@ -36,5 +36,4 @@ class city
 		void getBlacksmithBonus();
 };
 
-
 #endif // CITY_H_INCLUDED

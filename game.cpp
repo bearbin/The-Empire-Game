@@ -4,7 +4,7 @@ using namespace std;
 
 void game()
 {
-    int amountOfTurns;
+	int amountOfTurns;
 	int i;
 	int players = getPlayerNumbers() - 1;
 	cout << "How many turns do you want to play: ";
@@ -12,10 +12,10 @@ void game()
 	cout << endl;
 	for (int a = 0; a < amountOfTurns; a++)
 	{
-        for (i = 0; i <= players; i++)
-        {
-            cout << "Turn " << a+1 << " of " << amountOfTurns << " for player " << i+1 << "." << endl << endl;
-            turn(i);
+	for (i = 0; i <= players; i++)
+	{
+	cout << "Turn " << a+1 << " of " << amountOfTurns << " for player " << i+1 << "." << endl << endl;
+	turn(i);
         }
 	}
 	cin.get();

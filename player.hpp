@@ -9,12 +9,9 @@ using namespace std;
 
 class player
 {
-    string name;
-    public:
+	string name;
+	public:
         city cities[22];
-        /*void setName(string);
-        string getName();
-        player();*/
 }realPlayer[9];
 
 #endif // PLAYER_H_INCLUDED

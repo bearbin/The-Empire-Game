@@ -250,11 +250,11 @@ int city::setSoldier(int action, int value, int soldierType)
 	// action = 1 subtracts value from the soldier count. Returns 0 even if value > soldier count. Returns soldierCount.
 	// action = 2 Sets the soldier count to value. Returns -1 if value is negative. Returns soldierCount.
 	// action = 3 Tells the amount of soldier[soldierType].
-	bool correctChoice = false;
+	string correctChoice = "false";
 	switch (action)
 	{
 		case 0:
-			while (correctChoice == false)
+			while (correctChoice == "false")
 			{
 			if (soldierType >= 0 && soldierType <= 5)
 			{
@@ -268,7 +268,7 @@ int city::setSoldier(int action, int value, int soldierType)
 					cout << "Do you wish to do this (true/false): ";
 					cin >> correctChoice;
 					cout << endl;
-					if (correctChoice == true)
+					if (correctChoice == "true")
 					{
 					soldier[soldierType] += value;
 					money -= soldierInfo(0,soldierType) * value;
@@ -327,13 +327,13 @@ int city::setBuilding(int action, int value, int buildingNum)
     // action = 1 subtracts value from the soldier count. Returns -1 if building level is tried to go under 0. Else returns building level.
     // action = 2 Sets the soldier count to value. Returns -1 if value is negative. Returns soldierCount.
     // action = 3 Tells the amount of soldier[soldierType].
-	bool correctChoice = false;
+	string correctChoice = "false";
     switch (action)
     {
         case 0:
 		if (buildingNum >= 0 && buildingNum <= 5)
 		{
-		while (correctChoice == false)
+		while (correctChoice == "false")
 		{
 		if(building[buildingNum] + value <= buildingInfo(1,buildingNum))
 		{
@@ -344,7 +344,7 @@ int city::setBuilding(int action, int value, int buildingNum)
                                 cout << "You will have " << building[buildingNum] + value << " levels in your " << getObjectName(1, buildingNum) << endl;
                                 cout << "Do you wish to do this (true/false): ";
                                 cin >> correctChoice;
-				if (correctChoice == true)
+				if (correctChoice == "true")
 				{
 				building[buildingNum] += value;
 				money -= buildingInfo(0, buildingNum);

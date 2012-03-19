@@ -340,7 +340,7 @@ int city::setBuilding(int action, int value, int buildingNum)
 			if (buildingInfo(0, buildingNum) <= money)
 			{
 				cout << "If you do this:" << endl;
-                                cout << "You will be charged $" << buildingInfo(1, buildingNum) * value << " ." << endl;
+                                cout << "You will be charged $" << buildingInfo(0, buildingNum) * value << " ." << endl;
                                 cout << "You will have " << building[buildingNum] + value << " levels in your " << getObjectName(1, buildingNum) << endl;
                                 cout << "Do you wish to do this (true/false): ";
                                 cin >> correctChoice;

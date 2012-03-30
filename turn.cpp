@@ -21,10 +21,14 @@ void turn(int playerNumber)
 	{
 		return;
         }
-        else
+        else if (cityToWorkOn > -1 && cityToWorkOn < 3)
         {
             visitCity(cityToWorkOn, playerNumber);
         }
+	else 
+	{
+		cout << "Invalid option. Please try again." << endl;
+	}
 	}
 }
 

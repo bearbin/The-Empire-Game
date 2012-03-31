@@ -4,19 +4,20 @@ using namespace std;
 
 void game()
 {
-	int amountOfTurns;
-	int i;
-	int players = getPlayerNumbers() - 1;
+	currentTurn = 0;
+	playerNumbers = getPlayerNumbers() - 1;
 	cout << "How many turns do you want to play: ";
 	cin >> amountOfTurns;
 	cout << endl;
-	for (int a = 0; a < amountOfTurns; a++)
+	while (currentTurn <= amountOfTurns)
 	{
-	for (i = 0; i <= players; i++)
+	while (currentPlayer <= playerNumbers)
 	{
-	cout << "Turn " << a+1 << " of " << amountOfTurns << " for player " << i+1 << "." << endl << endl;
-	turn(i);
+	cout << "Turn " << currentTurn+1 << " of " << amountOfTurns << " for player " << currentPlayer+1 << "." << endl << endl;
+	turn(currentPlayer);
+	currentPlayer++;
         }
+	currentTurn++;
 	}
 	cin.get();
 	cin.get();

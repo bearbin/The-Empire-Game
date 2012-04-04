@@ -5,7 +5,7 @@ using namespace std;
 void turn(int playerNumber)
 {
 	int cityToWorkOn, slotToUse;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 	realPlayer[playerNumber].cities[i].getBlacksmithBonus();
 	}

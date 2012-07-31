@@ -14,3 +14,5 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $< -o $@
 clean:
 	rm -rf *o The-Empire-Game
+clean-objects:
+	rm -rf *o

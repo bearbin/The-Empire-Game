@@ -1,0 +1,33 @@
+Version 0.7.6.4
+
+ * Fixed bug I made when reducing number of cities.
+
+Version 0.7.6.3
+
+ * Cleaned code.
+
+Version 0.7.6.2
+
+ * Bugfix with y/n choice.
+
+Version 0.7.6.1
+
+ * Cleaned code.
+ * Fixed bug causing to much memory to be allocated.
+ * Bugfixes
+
+Version 0.7.6
+
+ * Added newlines to licence for readability.
+ * Fixed bug with turn counter.
+ * Added eror checking for buildings and soldiers. (Partial)
+
+Version 0.7.5
+
+ * Added confirmation for upgrading soldiers or buildings.
+
+Version 0.7.4
+
+ * Moved code to github.
+ * Added better messages for when upgrading a building failed.
+ * Fixed a bug with not having enough money to upgrade a building.
